@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>实验页面</title>
+    <meta charset="utf-8"/>
+    <script src="../js/jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#UserName").blur(function () {
+                var name = $("#UserName").val();
+                
+                var json1 = '{"UserName":"' + name + '","action":"selectName"}';
+                json1 = eval("(" + json1 + ")");
+                
+                $.post("UserTest.ashx", json1, function (data) {
+                    if (data == "1") {
+                        $("#IsHaveName").val("可以用");
+                    } else {
+                        $("#IsHaveName").val("不可用");
+                    }
+                });
+            });
+        });
+        
+        function zuce() {
+            var name = $("#UserName").val();
+            alert(name);
+            var pwd = $("#UserPwd").val();
+            var json1 = '{"UserName":"' + name + '","UserPwd":"' + pwd + '","action":"zuce"}';
+            json1 = eval("("+json1+")");
+            $.get("UserTest.ashx", json1, function (data) {
+                alert(data);
+                if (data>1) {
+                    alert("添加成功");
+                } else {
+                    alert("添加失败");
+                }
+            });
+        };
+        //根据用户名删除该用户
+        function delUser() {
+            var name = $("#delUser").val();
+            var json1 = '{"UserName":' + name + ',"action":"del"}';
+            json1 = eval("(" + json1 + ")");
+            $.get("UserTest.ashx", json1, function (data) {
+                alert(data);
+                if (data > 1) {
+                    alert("删除成功");
+                } else {
+                    alert("删除失败");
+                }
+            });
+        }
+        //登录
+        function login() {
+            var name = $("#UserName").val();
+            var pwd = $("#UserPwd").val();
+            var json1 = '{"UserName":' + name + ',"UserPwd":' + pwd + ',"action":"login"}';
+            json1 = eval("(" + json1 + ")");
+            $.get("UserTest.ashx", json1, function (data) {
+                alert(data);
+                if (data > 1) {
+                    alert("登录成功");
+                } else {
+                    alert("用户名或密码错误");
+                }
+            });
+        }
+        //修改密码
+        function update() {
+            var name = $("#UserName").val();//此时当ID用
+            var pwd = $("#UserPwd").val();
+            var json1 = '{"UserName":' + name + ',"UserPwd":' + pwd + ',"action":"updatePwd"}';
+            json1 = eval("(" + json1 + ")");
+            $.get("UserTest.ashx", json1, function (data) {
+                alert(data);
+                if (data > 1) {
+                    alert("修改成功");
+                } else {
+                    alert("修改失败");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+<h1>首页实验</h1>
+<h2>生成静态页并可显示</h2>  
+<h2>添加首页内容</h2>
+<h2>查看首页内容</h2>
+<h2>更改首页内容</h2>
+<h2>删除首页内容</h2>
+<h2>查看首页内容</h2>
+<h2>查看首页内容</h2>
+<h2>查看首页内容</h2>
+
+
+<h1>用户表后台实验</h1>
+<h2>用户注册</h2>
+登录名：<input type="text" id="UserName"/><input id="IsHaveName"/><br/>
+密码：<input type="text" id="UserPwd"/><br/>
+<button onclick="zuce()">提交</button><br/>
+<input type="button" value="登录" onclick="login()"/><input type="button" value="修改密码" onclick="update()"/>
+<input type="text" id="delUser"/><input type="button" value="根据名字删除" onclick="delUser()"/><br/>
+
+
+</body>
+</html>

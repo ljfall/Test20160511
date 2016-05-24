@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-1.12.3.js"></script>
+    <script>
+        function OrderAdd() {
+            $.post("test.ashx", { "use": "OrderAdd" }, function (data) {
+                alert(data);
+            });
+        }
+        function OrderDel() {
+            $.post("test.ashx", { "use": "OrderDel" }, function (data) {
+                alert(data);
+            });
+        }
+        function OrderSelect() {
+            $.post("test.ashx", { "use": "OrderSelect" }, function (data) {
+                alert(data);
+            });
+        }
+        function ShopCarAdd() {
+            $.post("test.ashx", { "use": "ShopCarAdd" }, function (data) {
+                alert(data);
+            });
+        }
+        function ShopCarDel() {
+            $.post("test.ashx", { "use": "ShopCarDel" }, function (data) {
+                alert(data);
+            });
+        }
+        function ShopCarUpdate() {
+            $.post("test.ashx", { "use": "ShopCarUpdate" }, function (data) {
+                alert(data);
+            });
+        }
+        function ShopCarSelect() {
+            $.post("test.ashx", { "use": "ShopCarSelect" }, function (data) {
+                alert(data);
+            });
+        }
+        function CollectAdd() {
+            $.post("test.ashx", { "use": "CollectAdd" }, function (data) {
+                alert(data);
+            });
+        }
+        function CollectDelByGoodsId() {
+            $.post("test.ashx", { "use": "CollectDelByGoodsId" }, function (data) {
+                alert(data);
+            });
+        }
+        function CollectDelByUserId() {
+            $.post("test.ashx", { "use": "CollectDelByUserId" }, function (data) {
+                alert(data);
+            });
+        }
+        function CollectSelect() {
+            $.post("test.ashx", { "use": "CouponSelectByShopId" }, function (data) {
+                alert(data);
+            });
+        }
+        function CollectSelect() {
+            $.post("test.ashx", { "use": "CouponSelectByUserId" }, function (data) {
+                alert(data);
+            });
+        }
+        function SensitiveWordAdd() {
+            $.post("test.ashx", { "use": "SensitiveWordAdd" }, function (data) {
+                alert(data);
+            });
+        }
+        function SensitiveWordDel() {
+            $.post("test.ashx", { "use": "SensitiveWordDel" }, function (data) {
+                alert(data);
+            });
+        }
+        function SensitiveWordSelecJZ() {
+            $.post("test.ashx", { "use": "SensitiveWordSelecJZ" }, function (data) {
+                alert(data);
+            });
+        }
+        function SensitiveWordSelectMH() {
+            $.post("test.ashx", { "use": "SensitiveWordSelectMH" }, function (data) {
+                alert(data);
+            });
+        }
+        function SensitiveWordSelectByDJ() {
+            $.post("test.ashx", { "use": "SensitiveWordSelectByDJ" }, function (data) {
+                alert(data);
+            });
+        }
+        function CouponAdd() {
+            $.post("test.ashx", { "use": "CouponAdd" }, function (data) {
+                alert(data);
+            });
+        }
+        function CouponDelByID() {
+            $.post("test.ashx", { "use": "CouponDelByID" }, function (data) {
+                alert(data);
+            });
+        }
+        function CouponDelByShopID() {
+            $.post("test.ashx", { "use": "CouponDelByShopID" }, function (data) {
+                alert(data);
+            });
+        }
+        function CouponDelByUserID() {
+            $.post("test.ashx", { "use": "CouponDelByUserID" }, function (data) {
+                alert(data);
+            });
+        }
+        function CouponSelect() {
+            $.post("test.ashx", { "use": "CouponSelect" }, function (data) {
+                alert(data);
+            });
+        }
+        function AppraiseAdd() {
+            $.post("test.ashx", { "use": "AppraiseAdd" }, function (data) {
+                alert(data);
+            });
+        }
+        function AppraiseDelByID() {
+            $.post("test.ashx", { "use": "AppraiseDelByID" }, function (data) {
+                alert(data);
+            });
+        }
+        function AppraiseDelByUserID() {
+            $.post("test.ashx", { "use": "AppraiseDelByUserID" }, function (data) {
+                alert(data);
+            });
+        }
+        function AppraiseDelByGoodsID() {
+            $.post("test.ashx", { "use": "AppraiseDelByGoodsID" }, function (data) {
+                alert(data);
+            });
+        }
+        function AppraiseSelectByID() {
+            $.post("test.ashx", { "use": "AppraiseSelectByID" }, function (data) {
+                alert(data);
+            });
+        }
+        function AppraiseSelectByUserID() {
+            $.post("test.ashx", { "use": "AppraiseSelectByUserID" }, function (data) {
+                alert(data);
+            });
+        }
+        function AppraiseSelectByGoodsID() {
+            $.post("test.ashx", { "use": "AppraiseSelectByGoodsID" }, function (data) {
+                alert(data);
+            });
+        }
+        function AppraiseSelectByAll() {
+            $.post("test.ashx", { "use": "AppraiseSelectByAll" }, function (data) {
+                alert(data);
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <h1>后台测试页面</h1>
+    <h2>订单表相关测试</h2>
+    <h3>订单添加</h3>
+    <input type="button" value="测试" onclick="OrderAdd()" />
+    <h3>订单删除</h3>
+    <input type="button" value="测试" onclick="OrderDel()" />
+    <h3>订单查询</h3>
+    <input type="button" value="测试" onclick="OrderSelect()" />
+    <h2>购物车相关测试</h2>
+    <h3>添加</h3>
+    <input type="button" value="测试" onclick="ShopCarAdd()" />
+    <h3>删除</h3>
+    <input type="button" value="测试" onclick="ShopCarDel()" />
+    <h3>更改</h3>
+    <input type="button" value="测试" onclick="ShopCarUpdate()" />
+    <h3>查询</h3>
+    <input type="button" value="测试" onclick="ShopCarSelect()" />
+    <h2>收藏相关查询</h2>
+    <h3>增加</h3>
+    <input type="button" value="测试" onclick="CollectAdd()" />
+    <h3>删除，根据商品ID</h3>
+    <input type="button" value="测试" onclick="CollectDelByGoodsId()" />
+    <h3>删除，根据用户ID</h3>
+    <input type="button" value="测试" onclick="CollectDelByUserId()" />
+    <h3>查询</h3>
+    <input type="button" value="测试" onclick="CollectSelect()" />
+
+
+    <h2>敏感词相关查询</h2>
+    <h3>增加</h3>
+    <input type="button" value="测试" onclick="SensitiveWordAdd()" />
+    <h3>删除</h3>
+    <input type="button" value="测试" onclick="SensitiveWordDel()" />
+
+
+
+
+    <h3>精准查询</h3>
+    <input type="button" value="测试" onclick="SensitiveWordSelecJZ()" />
+    <h3>模糊查询</h3>
+    <input type="button" value="测试" onclick="SensitiveWordSelectMH()" />
+    <h3>敏感词等级查询</h3>
+    <input type="button" value="测试" onclick="SensitiveWordSelectByDJ()" />
+
+    <h2>优惠券相关查询</h2>
+    <h3>增加</h3>
+    <input type="button" value="测试" onclick="CouponAdd()" />
+    <h3>删除，通过ID</h3>
+<input type="button" value="测试" onclick="CouponDelByID()"/>
+    <h3>删除，通过商品ID</h3>
+    <input type="button" value="测试" onclick="CouponDelByShopID()"/>
+    <h3>删除，通过用户ID</h3>
+    <input type="button" value="测试" onclick="CouponDelByUserID()" />
+    <h3>查询,通过店铺ID</h3>
+<input type="button" value="测试" onclick="CouponSelectByShopId()"/>
+    <h3>查询,通过用户ID</h3>
+    <input type="button" value="测试" onclick="CouponSelectByUserId()" />
+
+    <h2>评价表相关查询</h2>
+    <h3>增加</h3>
+    <input type="button" value="测试" onclick="AppraiseAdd()" />
+    <h3>删除，根据ID</h3>
+    <input type="button" value="测试" onclick="AppraiseDelByID()" />
+    <h3>删除，根据评价人ID</h3>
+    <input type="button" value="测试" onclick="AppraiseDelByUserID()" />
+    <h3>删除，根据商品ID</h3>
+    <input type="button" value="测试" onclick="AppraiseDelByGoodsID()" />
+    <h3>查询，根据ID</h3>
+    <input type="button" value="测试" onclick="AppraiseSelectByID()" />
+    <h3>查询，根据评价人ID</h3>
+    <input type="button" value="测试" onclick="AppraiseSelectByUserID()" />
+    <h3>查询，根据商品ID</h3>
+    <input type="button" value="测试" onclick="AppraiseSelectByGoodsID()" />
+    <h3>查询，多条件</h3>
+    <input type="button" value="测试" onclick="AppraiseSelectByAll()" />
+
+</body>
+</html>
