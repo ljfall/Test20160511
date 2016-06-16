@@ -18,11 +18,12 @@ namespace CaiCong.DAL
         /// <returns>是否操作成功</returns>
         public bool Add(HomeTable home)
         {
-            string sql = "INSERT INTO [dbo].[HomeTable] ([ThisKey] ,[ThisValue]) VALUES (@ThisKey ,@ThisValue)";
+            string sql = "INSERT INTO [dbo].[HomeTable]([ThisKey],[ThisShopID],[ImgUrl],[IsDel])VALUES(@ThisKey,@ThisShopID,@ImgUrl,1)";
             SqlParameter[] sqlParameter =
             {
                 new SqlParameter("@ThisKey", home.ThisKey),
-                new SqlParameter("@ThisValue", home.ThisValue)
+                new SqlParameter("@ThisShopID", home.ThisShopID),
+                new SqlParameter("@ImgUrl", home.ImgUrl)
             };
 
             int num= SqlHelper.SqlHelper.ExecuteNonQuery(sql, CommandType.Text, sqlParameter);
@@ -42,7 +43,7 @@ namespace CaiCong.DAL
         /// <returns>是否操作成功</returns>
         public bool Del(int ID)
         {
-            string sql = "DELETE FROM [dbo].[HomeTable] where ID=@ID";
+            string sql = "UPDATE [dbo].[HomeTable] SET [IsDel] = 0 where ID=@ID";
             SqlParameter[] sqlParameter =
             {
                 new SqlParameter("@ID",ID)
@@ -74,10 +75,14 @@ namespace CaiCong.DAL
             {
                 stringsList.Add(" [ThisKey] = @ThisKey ");
                 sqlParameters.Add(new SqlParameter("@ThisKey", home.ThisKey));
-            }else if (home.ThisValue!=null)
+            }else if (home.ThisShopID>0)
             {
-                stringsList.Add(" [ThisValue] = @ThisValue ");
-                sqlParameters.Add(new SqlParameter("@ThisValue", home.ThisValue));
+                stringsList.Add(" [ThisShopID] = @ThisShopID ");
+                sqlParameters.Add(new SqlParameter("@ThisShopID", home.ThisShopID));
+            }else if (home.ImgUrl != null)
+            {
+                stringsList.Add(" [ImgUrl] = @ImgUrl ");
+                sqlParameters.Add(new SqlParameter("@ImgUrl", home.ImgUrl));
             }
             string sql = "";
             string.Join(sql, stringsList, ",");
@@ -103,20 +108,26 @@ namespace CaiCong.DAL
         /// <returns>是否操作成功</returns>
         public List<HomeTable> Select(HomeTable home)
         {
-            string sql = "SELECT [ID],[ThisKey],[ThisValue] FROM [dbo].[HomeTable] WHERE ";
+            string sql = "SELECT [ID],[ThisKey],[ThisShopID],[ImgUrl] FROM [dbo].[HomeTable] WHERE IsDel=1 ";
             List<SqlParameter> sqlParameters=new List<SqlParameter>();
 
             //判断是根据ID或ThisKey或ThisValue查询
             if (home.ThisKey!=null)
             {
-                sql += "ThisKey=@ThisKey";
+                sql += " ThisKey=@ThisKey ";
                 sqlParameters.Add(new SqlParameter("@ThisKey", home.ThisKey));
             }
-            else if (home.ThisValue!=null)
+            else if (home.ThisShopID >0)
             {
-                sql += "ThisValue=@ThisValue";
-                sqlParameters.Add(new SqlParameter("@ThisValue", home.ThisValue));
+                sql += " ThisShopID=@ThisShopID ";
+                sqlParameters.Add(new SqlParameter("@ThisShopID", home.ThisShopID));
             }
+            else if (home.ImgUrl != null)
+            {
+                sql += " ImgUrl=@ImgUrl ";
+                sqlParameters.Add(new SqlParameter("@ImgUrl", home.ImgUrl));
+            }
+
             else if (home.ID >0)
             {
                 sql += "ID=@ID";
@@ -135,8 +146,9 @@ namespace CaiCong.DAL
             {
                 HomeTable homgTable = new HomeTable();
                 homgTable.ID = Convert.ToInt32(sdr["ID"]);
-                homgTable.ThisKey = sdr["ID"].ToString();
-                homgTable.ThisValue = sdr["ID"].ToString();
+                homgTable.ThisShopID = Convert.ToInt32(sdr["ThisShopID"]);
+                homgTable.ThisKey = sdr["ThisKey"].ToString();
+                homgTable.ImgUrl = sdr["ImgUrl"].ToString();
             }
             //若为空，返回的也是一个空的对象
             return homeTables;

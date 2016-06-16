@@ -10,7 +10,9 @@ namespace CaiCongModel
     {
         private int _id;
         private string _thiskey;
-        private string _thisvalue;
+        private string _imgurl;
+        private int _thisshopid;
+        private int _isdel;
         public int ID
         {
             set { _id = value; }
@@ -25,12 +27,28 @@ namespace CaiCongModel
             get { return _thiskey; }
         }
         /// <summary>
-        /// key对应的value
+        /// 对应商品的ID
         /// </summary>
-        public string ThisValue
+        public int ThisShopID
         {
-            set { _thisvalue = value; }
-            get { return _thisvalue; }
+            set { _thisshopid = value; }
+            get { return _thisshopid; }
+        }
+        /// <summary>
+        /// 专门用于首页的图片
+        /// </summary>
+        public string ImgUrl
+        {
+            set { _imgurl = value; }
+            get { return _imgurl; }
+        }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public int IsDel
+        {
+            set { _isdel = value; }
+            get { return _isdel; }
         }
     }
 }

@@ -2,7 +2,7 @@
 namespace CaiCongModel
 {
 	/// <summary>
-	/// OrderStateTable:实体类(属性说明自动提取数据库字段的描述信息)
+	/// OrderStateTable:实体类(属性说明自动提取数据库字段的描述信息)订单状态表
 	/// </summary>
 	[Serializable]
 	public partial class OrderStateTable

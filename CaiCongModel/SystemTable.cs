@@ -2,7 +2,7 @@
 namespace CaiCongModel
 {
 	/// <summary>
-	/// 1
+	/// 系统表
 	/// </summary>
 	[Serializable]
 	public partial class SystemTable

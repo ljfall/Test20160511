@@ -51,6 +51,7 @@
     <Compile Include="OrderTableBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceivingManagementTable.cs" />
+    <Compile Include="RecordBLL.cs" />
     <Compile Include="SearchGoodsBLL.cs" />
     <Compile Include="SensitiveWordTableBLL.cs" />
     <Compile Include="ShoppingCarTableBLL.cs" />

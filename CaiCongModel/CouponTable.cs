@@ -18,8 +18,11 @@ namespace CaiCongModel
 		private DateTime? _gettime;
 		private DateTime? _overtime;
 		private int? _isdel=1;
-		/// <summary>
-		/// 
+
+	    
+
+	    /// <summary>
+		/// 优惠劵ID
 		/// </summary>
 		public int SubductionID
         {

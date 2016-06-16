@@ -1,10 +1,10 @@
 ﻿using System;
 namespace CaiCongModel
 {
-	/// <summary>
-	/// OrderTable:实体类(属性说明自动提取数据库字段的描述信息)
-	/// </summary>
-	[Serializable]
+    /// <summary>
+    /// OrderTable:订单表(属性说明自动提取数据库字段的描述信息)
+    /// </summary>
+    [Serializable]
 	public partial class OrderTable
 	{
 		public OrderTable()

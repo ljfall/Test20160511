@@ -2,7 +2,7 @@
 namespace CaiCongModel
 {
 	/// <summary>
-	/// 1
+	/// 用户等级表
 	/// </summary>
 	[Serializable]
 	public partial class UserGradeTable

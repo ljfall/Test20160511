@@ -1,11 +1,557 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-	<meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
+    <link href="/js/jquery.slideBox.css" rel="stylesheet" type="text/css" />
+    <script src="/js/jquery.slideBox.min.js" type="text/javascript"></script>
+    <script>
+        jQuery(function($){
+            $('#demo3').slideBox({
+        duration : 0.3,//滚动持续时间，单位：秒
+        easing : 'linear',//swing,linear//滚动特效
+        delay : 5,//滚动延迟时间，单位：秒
+        hideClickBar : false,//不自动隐藏点选按键
+        clickBarRadius : 10,
+        height:370,
+        width:790,
+    });
+    //如果需要用宽高的情况，用width或height，注意此处不需要加px
+});
+</script>
+
+
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100%;
+        height: auto;
+    }
+    .div1{
+        width: 1100px;
+        margin: auto;
+        border: 1px solid #f0f;
+        height: auto;
+    }
+
+    /*头部导航*/
+    .header{
+        width: 100%;
+        height: 34px;
+        background-color: #f0f0f0;
+        line-height: 34px;
+    }
+    .header_li_float_left{
+        float: left;
+    }
+    .header_li_float_right{
+        float: right;
+    }
+    .header_li{
+        padding-left: 5px;
+        padding-right: 10px;
+        list-style: none;
+        background-color: #f0f0f0;
+        line-height: 34px;
+    }
+    .header_li_a{
+        list-style: none;
+        line-height: 34px;
+        color: #666;
+        font-family: "Microsoft Yahei"!important;
+        font: 12px/1.5 Tahoma, Helvetica, Arial, "宋体", sans-serif;
+    }
+    /*头部导航end*/
+    /*搜索导航*/
+    .search{
+        width: 100%;
+        height: 135px;
+        /*background-color: #f0f;*/
+    }
+    .search_loge{
+        float: left;
+        height: 135px;
+        width: 200px;
+        margin: auto;
+
+        line-height: 135px;
+    }
+    .search_text{
+        float: left;
+        height: 85px;
+        position:relative;
+        width: 700px;
+        top: 40px;
+    }
+    .search_text_txt{
+        margin: 0;
+        width: 340px;
+        height: 50px;
+        font-size: 15px;
+        margin-left: 30px;
+        left: 3px;/*离左边框的距离*/
+        padding: 0;
+    }
+    .search_text_btn{
+        margin: 0;
+        padding: 0;
+        border: none;
+        height: 50px;
+        width: 60px;
+        font-size: 20px;
+    }
+    .search_text_p{
+        position:relative;
+        left: 40px;
+        top: 10px;
+        font-size: 8px;
+        color: #000;
+        padding-left: 3px;
+    }
+    .search_img{
+        float: left;
+        height: 85px;
+        width: 160px;
+        padding-top: 25px;
+    }
+    /*搜索导航end*/
+
+    /*导航条*/
+    .nav{
+        width: 100%;
+        height: 38px;
+        background: #539b34;
+        line-height: 38px;
+    }
+    .nav_li{
+        padding-left: 20px;
+        padding-right: 20px;
+        list-style: none;
+        background-color: #539b34;
+    }
+    .float_left{
+        float: left;
+    }
+    .float_right{
+        float: right;
+    }
+    .nav_li_a{
+        list-style: none;
+        line-height: 38px;
+        color: #fff;
+        font-size: 15px;
+    }
+    /*导航条end*/
+    /*轮播图片*/
+    .imgs{
+        margin-top: 10px;
+        height: 370px;
+    }
+.imgs_other{
+	width: 250px;
+	height: 370px;
+}
+    /*轮播图片end*/
+    /*猜你喜欢tab*/
+   .guess-tab{
+   	height: 50px;
+   	width: 100%;
+   }
+    /*猜你喜欢tab end*/
+    /*猜你喜欢小图片展示*/
+   .maybeLike li{
+   	    list-style: none;
+   }
+   .maybeLike>ul>li>div{
+   	height: 230px;width: 157px;float: left;margin: 0 10px;
+   	
+   }
+    .maybeLike>ul>li>div>img{
+    	height: 150px;width:150px;     margin: 0 3px; 
+    	
+    }
+    .maybeLike>ul>li>div>img>p>a{
+    	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; display: block;width:100px; float: left;
+    }
+    .maybeLike_other_p{
+    	display: block;font-size: 12px;
+    padding-bottom: 5px;
+    color: #999;white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;float: left;margin-left: 5px;width:140px;
+    }
+    
+    /*猜你喜欢小图片展示end*/
+    /*热销水果*/
+   .hot{
+   	position: relative;
+   	top: 10px;
+   	height: 400px;
+   	width: 100%;
+   	margin: auto;
+   }
+   .hot>div{
+   	float: left;
+   	height: 400px;
+   	width: 650px;
+   }
+   .hot>div>img{
+   	float: left;
+   	margin: 10px 10px 10px 10px;
+   	height: 394px;
+   	width: 368px;
+   	
+   }
+   .hot_leftimg_txt{
+   	width: 240px;
+   	height: 400px;
+   }
+   .hot_leftimg_title{
+   	margin-top: 30px;
+   }
+   .hot_left_txt{
+   	margin-top: 30px;
+   	font: "微软雅黑";
+   	font-size: 8px;
+   }
+   .hot_left_total{
+   	/*总价*/
+   	color: red;
+   	float: left;
+   }
+   .hot_left_price{
+   	float:right;
+   }
+    /*热销水果end*/
+
+</style>
 </head>
 <body>
-    <a href="test.html">实验页面</a>
+    <div id="all" class="div1">
+        <div id="header" class="header">
+            <ul>
+                <li class="header_li header_li_float_left"><a class="header_li_a">欢迎观临</a></li>
+                <li class="header_li header_li_float_left"><a class="header_li_a">用户名</a></li>
+                <li class="header_li header_li_float_left"><a class="header_li_a">用户中心</a></li>
+                <li class="header_li header_li_float_left"><a class="header_li_a">登出</a></li>
+                <li class="header_li header_li_float_left"><a class="header_li_a">消息 0</a></li>
+            </ul>
+            <ul>
+                <li class="header_li header_li_float_right"><a class="header_li_a">帮助中心</a></li>
+                <li class="header_li header_li_float_right"><a class="header_li_a">移动端</a></li>
+                <li class="header_li header_li_float_right"><a class="header_li_a">菜虫微博</a></li>
+                <li class="header_li header_li_float_right"><a class="header_li_a">购物车</a></li>
+                <li class="header_li header_li_float_right"><a class="header_li_a">收藏本站 0</a></li>
+            </ul>
+        </div>
+        <div id="search" class="search">
+            <div class="search_loge">
+                <img style="vertical-align:middle;" src="/img/ccwlogo.png">
+            </div>
+            <div id="search_text" class="search_text">
+                <div>
+                    <input type="text" class="search_text_txt" />
+                    <input type="button" value="搜索" class="search_text_btn" />
+                </div>
+                <p class="search_text_p">热门关键词：好多好多，苹果，榴莲，桃子，橙子</p>
+            </div>
+            <div class="search_img">
+                <img style="vertical-align:middle;" src="/img/0048293.jpeg">
+            </div>
+        </div>
+        <div id="nav" class="nav">
+            <ul>
+                <li class="nav_li float_left"><a class="nav_li_a" href="#">首页</a></li>
+                <li class="nav_li float_left"><a class="nav_li_a" href="#">进口水果</a></li>
+                <li class="nav_li float_left"><a class="nav_li_a" href="#">国产水果</a></li>
+                <li class="nav_li float_left"><a class="nav_li_a" href="#">天天惠</a></li>
+                <li class="nav_li float_left"><a class="nav_li_a" href="#">特色产品</a></li>
+                <li class="nav_li float_left"><a class="nav_li_a" href="#">农场预定</a></li>
+            </ul>
+            <ul>
+                <li class="nav_li float_right"><a class="nav_li_a" href="#">扫描关注</a></li>
+                <li class="nav_li float_right"><a class="nav_li_a" href="#">百科</a></li>
+                <li class="nav_li float_right"><a class="nav_li_a" href="#">充值</a></li>
+                <li class="nav_li float_right"><a class="nav_li_a" href="#">积分</a></li>
+                <li class="nav_li float_right"><a class="nav_li_a" href="#">农场</a></li>
+                <li class="nav_li float_right"><a class="nav_li_a" href="#">礼品</a></li>
+            </ul>
+        </div>
+        <div class="imgs">
+            <div id="demo3" class="slideBox float_left">
+              <ul class="items">
+                <li><a href="http://www.jq22.com/" title="这里是测试标题一"><img src="/img/0048914.jpeg"></a></li>
+                <li><a href="http://www.jq22.com/" title="这里是测试标题二"><img src="/img/0049058.jpeg"></a></li>
+                <li><a href="http://www.jq22.com/" title="这里是测试标题三"><img src="/img/0049171.jpeg"></a></li>
+              </ul>
+            </div>
+            <div class="imgs_other float_left">
+                <img style="width: 300px; height: 370px;" src="/img/0049050.jpeg"/>
+            </div>
+        </div>
+    
+    <div id="guess-tab" class="guess-tab">
+        <p>猜你喜欢</p>
+    </div>
+    <div class="maybeLike">
+        <ul>
+            <li>
+                <div>
+                    <img  src="/img/10001.jpg"/>
+                    <p>
+                        <a href="#">好苹果，中国造123456</a>
+                        <span style="float: right;">$50.00</span>
+                    </p>
+                    <p class="maybeLike_other_p">9个每箱，约3.6斤111111111111111111111111</p>
+
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img  src="/img/10001.jpg"/>
+                    <p>
+                        <a href="#">好苹果，中国造123456</a>
+                        <span style="float: right;">$50.00</span>
+                    </p>
+                    <p class="maybeLike_other_p">9个每箱，约3.6斤111111111111111111111111</p>
+
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img  src="/img/10001.jpg"/>
+                    <p>
+                        <a href="#">好苹果，中国造123456</a>
+                        <span style="float: right;">$50.00</span>
+                    </p>
+                    <p class="maybeLike_other_p">9个每箱，约3.6斤111111111111111111111111</p>
+
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img  src="/img/10001.jpg"/>
+                    <p>
+                        <a href="#">好苹果，中国造123456</a>
+                        <span style="float: right;">$50.00</span>
+                    </p>
+                    <p class="maybeLike_other_p">9个每箱，约3.6斤111111111111111111111111</p>
+
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img  src="/img/10001.jpg"/>
+                    <p>
+                        <a href="#">好苹果，中国造123456</a>
+                        <span style="float: right;">$50.00</span>
+                    </p>
+                    <p class="maybeLike_other_p">9个每箱，约3.6斤111111111111111111111111</p>
+
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img  src="/img/10001.jpg"/>
+                    <p>
+                        <a href="#">好苹果，中国造123456</a>
+                        <span style="float: right;">$50.00</span>
+                    </p>
+                    <p class="maybeLike_other_p">9个每箱，约3.6斤111111111111111111111111</p>
+
+                </div>
+            </li>
+            
+        </ul>
+    
+    </div>
+	<div class="hot">
+		<div>
+			<img src="/img/0048908_395.jpg" />
+			<div class="hot_leftimg_txt float_left">
+				<h3  class="hot_leftimg_title">泰国金枕榴莲</h3>
+				<p class="hot_left_txt">1个/份，3.4-7.5斤，广东省内包邮。菜虫买手亲赴泰国东部产地，为您挑选最优质的金枕榴莲，百闻不如一尝，绝对实力取胜；尝过一次便无法戒掉。注：省内包邮！</p>
+				<div style="padding-top: 30px;padding-bottom: 30px;background: #f5f2e9;">
+					<p>直供价:</p>
+					<p  class="hot_left_total">$84.00</p>
+					<p  class="hot_left_price">$15.27/500g</p><br />
+				</div>
+				<div style="margin-top: 10px;margin-bottom: 10px;">
+					<a href="#">进入农场</a>
+					<a href="#">加入购物车</a>
+				</div>
+				
+				<p>已售492件</p>
+				<div style="margin-top: 20px;"><p>产地：泰国尖竹汶</p></div>
+			</div>
+		</div>
+		<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	</div>
+	<div class="other_show">
+		<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	
+	</div>
+	<div class="other_show">
+		<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	
+	</div>
+	<div class="other_show">
+		<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	<div style="float: left;width: 320px;height: 400px;margin: 10px;">
+			<div><img  src="/img/0048494_304.jpg"/></div>
+			<h3 style="margin-top: 20px;margin-bottom: 30px;">进口大红提</h3>
+			<hr />
+			<p style="font: '微软雅黑';font-size: 8px; margin-top: 10px;">3斤/箱。大红提皮薄肉厚，美肤保湿，香甜可口，大红提味道纯正，皮薄肉厚，味甜爽脆，果肉坚硬，色泽深红，</p>
+			<p style="margin-top: 10px;">直供价:<b style="color: #rad;">$56.00</b></p>
+			<p>$18.67/500g</p>
+			<div style="margin-top: 10px;margin-bottom: 10px;">
+				<a href="#">进入农场</a>
+				<a href="#">加入购物车</a>
+			</div>
+			
+			<p>已售615件</p>
+		</div>
+	
+	</div>
+
+        
+
+
+
+
+
+
+
+
+
+</div>
 </body>
 </html>

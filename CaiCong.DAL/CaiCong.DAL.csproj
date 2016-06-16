@@ -51,6 +51,7 @@
     <Compile Include="OrderTableDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceivingManagementTable.cs" />
+    <Compile Include="RecordDAL.cs" />
     <Compile Include="SearchGoodsDAL.cs" />
     <Compile Include="SensitiveWordTableDAL.cs" />
     <Compile Include="ShoppingCarTableDAL.cs" />

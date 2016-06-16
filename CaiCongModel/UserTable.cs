@@ -19,7 +19,7 @@ namespace CaiCongModel
 		private int _isdel=1;
 		private int _integral=0;
 		private DateTime? _registertime;
-		private byte[] _phone;
+		private string _phone;
 		private int _status;
 		/// <summary>
 		/// 
@@ -96,7 +96,7 @@ namespace CaiCongModel
 		/// <summary>
 		/// 联系电话
 		/// </summary>
-		public byte[] Phone
+		public string Phone
 		{
 			set{ _phone=value;}
 			get{return _phone;}

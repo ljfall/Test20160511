@@ -163,6 +163,31 @@ namespace CaiCong.DAL
                 return 0;
             }
 	    }
+        /// <summary>
+        /// 查询所有用户数据
+        /// </summary>
+        /// <returns></returns>
+	    public List<UserTable> SelectAll()
+	    {
+            List<UserTable> userList=new List<UserTable>();
+	        string sql = "";
+	        SqlDataReader sdr=SqlHelper.SqlHelper.ExecuteReader(sql, CommandType.Text);
+	        while (sdr.Read())
+	        {
+                UserTable ut=new UserTable();
+	            ut.ID = Convert.ToInt32(sdr["ID"]);
+	            ut.Integral = Convert.ToInt32(sdr["Integral"]);
+	            ut.Status = Convert.ToInt32(sdr["Status"]);
+	            ut.UserGradeID = Convert.ToInt32(sdr["UserGradeID"]);
+	            ut.RegisterTime = Convert.ToDateTime(sdr["RegisterTime"]);
+	            ut.Phone = sdr["Phone"].ToString();
+	            ut.UserEmail = sdr["UserEmail"].ToString();
+	            ut.UserIP = sdr["UserIP"].ToString();
+	            ut.UserName = sdr["UserName"].ToString();
+	            
+	        }
+	        return userList;
+	    }
 	}
 }
 

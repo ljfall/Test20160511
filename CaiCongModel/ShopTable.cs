@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+
 namespace CaiCongModel
 {
 	/// <summary>
@@ -17,10 +19,11 @@ namespace CaiCongModel
 		private DateTime? _registertime;
 		private decimal? _shopappraise;
 		private int? _isdel=1;
-		/// <summary>
-		/// 
-		/// </summary>
-		public int ID
+	    private int? _shopappraisenumber;
+        /// <summary>
+        /// 
+        /// </summary>
+        public int ID
 		{
 			set{ _id=value;}
 			get{return _id;}
@@ -58,23 +61,25 @@ namespace CaiCongModel
 			get{return _registertime;}
 		}
 		/// <summary>
-		/// 店铺评价分数
+		/// 店铺评价总分数
 		/// </summary>
 		public decimal? ShopAppraise
 		{
 			set{ _shopappraise=value;}
 			get{return _shopappraise;}
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public int? IsDel
-		{
-			set{ _isdel=value;}
-			get{return _isdel;}
-		}
-		#endregion Model
+        
+        /// <summary>
+        /// 评价人数
+        /// </summary>
+	    public int? ShopAppraiseNumber
+	    {
+	        set { _shopappraisenumber = value; }
+	        get { return _shopappraisenumber; }
+	    }
 
-	}
+	    #endregion Model
+
+    }
 }
 
